@@ -1,9 +1,12 @@
 """Test for auth views."""
 from django.test import TestCase
-from django.conf import settings
+from django.urls import reverse
 
 
 class Test(TestCase):
     def test_view_works(self):
-        print(getattr(settings, 'SECRET_KEY'))
-        self.assertTrue(True)
+        url = reverse('user-list')
+
+        response = self.client.post(url)
+
+        print(response.data)
