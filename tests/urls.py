@@ -1,0 +1,1 @@
+"""URLConf for testing auth"""
